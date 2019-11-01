@@ -1,0 +1,51 @@
+{
+  "name": "ppt-theme",
+  "version": "1.0.0",
+  "description": "This is build system specific to PPT Theme developed by Takhribchi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TakhribchiDev/ppt-theme.git"
+  },
+  "keywords": [
+    "PPT",
+    "Theme",
+    "File",
+    "store",
+    "PPT",
+    "wordpress"
+  ],
+  "author": "Takhribchi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TakhribchiDev/ppt-theme/issues"
+  },
+  "homepage": "https://github.com/TakhribchiDev/ppt-theme#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
