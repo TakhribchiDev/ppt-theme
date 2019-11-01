@@ -23,11 +23,11 @@ var browserSync     = require( 'browser-sync' );
 // Project related variables
 var styleSRC        = './sass/';
 var styleURL        = './css/';
-var styleFiles      = [];
+var styleFiles      = [ 'ppt.admin.scss', 'ppt.scss' ];
 var mapURL          = './';
 
 var jsSRC           = './es6/';
-var jsFiles         = [ ];
+var jsFiles         = [ 'ppt.admin.js', 'ppt.js' ];
 var jsURL           = './js/';
 
 var imageWatch      = './img/**/*.img';
