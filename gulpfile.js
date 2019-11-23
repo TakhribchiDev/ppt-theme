@@ -26,8 +26,8 @@ var styleURL        = './css/';
 var styleFiles      = [ 'ppt.admin.scss', 'ppt.scss' ];
 var mapURL          = './';
 
-var jsSRC           = './es6/';
-var jsFiles         = [ 'ppt.admin.js', 'ppt.js' ];
+var jsSRC           = './scripts/';
+var jsFiles         = [ 'ppt.admin.js', 'ppt.js', 'app.js' ];
 var jsURL           = './js/';
 
 var imageWatch      = './img/**/*.img';
