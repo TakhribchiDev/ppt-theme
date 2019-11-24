@@ -31,7 +31,7 @@ if ( ! function_exists( 'svg' ) ) {
     function svg( $name ) {
         if ( ! $name ) return;
         
-        echo get_template_part( 'svg/', $name . '.svg' );
+        get_template_part( 'svg/inline', $name . '.svg' );
     }
 }
 
