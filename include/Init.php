@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Inc;
-
 
 final class Init {
 
@@ -16,7 +14,6 @@ final class Init {
 		return [
 			Setup\Enqueue::class
 		];
-
 	}
 
 	/**
@@ -25,19 +22,13 @@ final class Init {
 	 * @return
 	 */
 	public static function register_services() {
-
 		foreach ( self::get_services() as $class ) {
-
 			$service = self::instantiate( $class );
 
 			if ( method_exists( $service, 'register' ) ) {
-
 				$service->register();
-
 			}
-
 		}
-
 	}
 
 	/**
@@ -48,9 +39,6 @@ final class Init {
 	 * @return mixed instance       new instance of the class
 	 */
 	public static function instantiate( $class ) {
-
 		return new $class;
-
 	}
-
 }
