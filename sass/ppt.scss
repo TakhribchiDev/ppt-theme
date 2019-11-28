@@ -6,12 +6,38 @@
 
 @import 'partials/iconfont';
 @import 'partials/fonts';
-@import 'partials/colors';
-@import 'partials/gradients';
+@import 'variables/colors';
+@import 'mixins/gradients';
+@import 'mixins/mixins';
 
 /*
 * ----------------------------------------
-*   Header
+*   Modules import
 * ----------------------------------------
 */
+@import 'modules/header';
+@import 'modules/footer';
+
+/*
+* ----------------------------------------
+*   General
+* ----------------------------------------
+*/
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+  font-family: Vazir, Tahoma, Arial, sans-serif;
+  font-size: 20px;
+  background-color: $background;
+}
+a {
+  color: $black;
+  @include animate( color, 320ms );
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $magenta;
+  }
+}
 
