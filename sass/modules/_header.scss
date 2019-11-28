@@ -1,0 +1,243 @@
+/*
+* ----------------------------------------
+*   Header
+* ----------------------------------------
+*/
+.header-container {
+  position: relative;
+  padding: 40px 30px 40px 30px;
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    border-radius: 0 0 40px 40px;
+    @include purpleGradient();
+    @include animate( opacity, 200ms );
+  }
+
+  * {
+    z-index: 1;
+  }
+
+  .ppt-logo {
+    svg {
+      fill: $magenta;
+    }
+    display: inline-block;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+  }
+  .ppt-navbar {
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: right;
+    font-weight: 500;
+    padding: 0;
+
+    .ppt-nav {
+      padding-right: 0;
+      flex-direction: row;
+      -ms-flex-direction: row;
+
+      li {
+        margin: 0 10px;
+        a {
+          border-radius: 35px;
+          padding: 5px 20px 5px 20px;
+          @include animate( all, 320ms );
+
+          &:hover,
+          &:focus {
+            @include boxShadow( 0, 0, 0, 0.2 );
+            color: $white;
+            background-color: $magenta;
+          }
+        }
+        &.active {
+          a {
+            background-color: $magenta;
+            @include boxShadow( 0, 0, 0, 0.2 );
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .ppt-search-form {
+    .header-search-form {
+      position: relative;
+    }
+    .search-box {
+      border-radius: 20px;
+      border: 2px solid $grey;
+      width: 300px;
+      height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+      &:focus {
+        border: 2px solid $purple;
+        box-shadow: none;
+      }
+    }
+    .search-submit {
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      background: none;
+      border:none;
+      color: $grey;
+      @include animate( color, 320ms );
+      &:hover,
+      &:focus {
+        color: $magenta;
+      }
+    }
+  }
+  .ppt-auth {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+    }
+
+    .cart-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 25px;
+      margin-left: 10px;
+      color: $magenta;
+      font-size: 22px;
+      background: transparent;
+      @include animate( background-color, 320ms );
+
+      &:hover,
+      &:focus {
+        background-color: rgba( 0, 0, 0, 0.1 );
+      }
+    }
+
+    .profile-btn {
+      color: $white;
+      height: 40px;
+      padding: 5px 10px 5px 10px;
+      background-color: $green;
+      border-radius: 30px;
+      font-size: 16px;
+      @include boxShadow( 0, 0, 0, 0.1 );
+      @include animate( background-color, 320ms );
+
+      i {
+        margin-left: 5px;
+        font-size: 20px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $dark-green;
+      }
+    }
+  }
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+
+  * {
+    z-index: 1031;
+  }
+
+  &:before {
+    @include boxShadow( 0, 0, 0, 0.3 );
+    opacity: 1;
+  }
+
+  .ppt-logo {
+    svg {
+      fill: $white;
+    }
+  }
+
+  .ppt-navbar {
+    .ppt-nav {
+      li {
+        a {
+          color: $white;
+          border-radius: 35px;
+          padding: 5px 20px 5px 20px;
+
+          &:hover,
+          &:focus {
+            color: $magenta;
+            background-color: $white;
+          }
+        }
+        &.active {
+          a {
+            background-color: $white;
+            color: $magenta;
+          }
+        }
+      }
+    }
+  }
+
+  .ppt-search-form {
+    .search-box {
+      color: $white;
+      border: 2px solid rgba( 255, 255, 255, 0.1 );
+      background-color: rgba( 0, 0, 0, 0.1 );
+
+
+      &:focus {
+        border-color: rgba( 255, 255, 255, 0.3 );
+        box-shadow: 0 0 5px 3px rgba( 255, 255, 255, 0.1);
+      }
+
+      &::placeholder {
+        color: rgba( 255, 255, 255, 0.7);
+      }
+
+      &::-ms-input-placeholder {
+        color: rgba( 255, 255, 255, 0.3);
+      }
+
+      &:-ms-input-placeholder {
+        color: rgba( 255, 255, 255, 0.3);
+      }
+    }
+
+    .search-submit {
+      color: rgba( 255, 255, 255, 0.3);
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+  .ppt-auth {
+    .cart-btn {
+      color: $white;
+    }
+  }
+}

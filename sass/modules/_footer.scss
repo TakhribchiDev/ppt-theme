@@ -1,0 +1,157 @@
+/*
+* ----------------------------------------
+*   Footer
+* ----------------------------------------
+*/
+.footer-container {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 90px;
+  @include purpleGradient(180deg);
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -3px 5px rgba( 0, 0, 0, 0.2);
+
+  .ppt-footer-nav {
+    flex-direction: column;
+    margin-right: -40px;
+
+    a {
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $grey;
+      }
+    }
+  }
+
+  .payment-icon, .site-license{
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 144px;
+    width: 90px;
+    border-radius: 10px;
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .site-license {
+    background-color: $white;
+  }
+
+  .news-subscribe-form {
+    .subscribe-label {
+      color: $white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .subscribe-email, .subscribe-btn {
+      height: 48px;
+      border: none;
+    }
+
+    .subscribe-email {
+      border-radius: 0 30px 30px 0;
+      &:focus {
+        box-shadow: 0 0 0.3rem 0.2rem rgba(255, 255, 255, 0.3);
+      }
+    }
+    .subscribe-btn {
+      margin-right: -1px;
+      padding-right: 20px;
+      padding-left: 20px;
+      border-radius: 30px 0 0 30px;
+      color: $white;
+      background-color: $red;
+    }
+
+    .subscribe-description {
+      margin-top: 20px;
+      color: $white;
+      opacity: 0.5;
+      font-size: 16px;
+    }
+  }
+
+  .footer-social-links {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-top: 40px;
+
+    .social-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba( 0, 0, 0, 0.2 );
+      color: $white;
+      margin-left: 20px;
+      @include animate( background-color, 320ms );
+    }
+
+    .link-telegram {
+      font-size: 20px;
+
+      &:hover,
+      &:focus {
+        background-color: $telegram;
+      }
+    }
+    .link-instagram {
+      font-size: 24px;
+
+      &:hover,
+      &:focus {
+        background-color: $instagram;
+      }
+    }
+    .link-facebook {
+      font-size: 22px;
+
+      &:hover,
+      &:focus {
+        background-color: $facebook;
+      }
+    }
+    .link-twitter {
+      font-size: 18px;
+
+      &:hover,
+      &:focus {
+        background-color: $twitter;
+      }
+    }
+    .link-mail {
+      font-size: 18px;
+
+      &:hover,
+      &:focus {
+        background-color: $mail;
+      }
+    }
+  }
+
+  .copyright {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba( 0, 0, 0, 0.2);
+    color: $white;
+    font-size: 14px;
+    padding: 20px 0;
+    text-align: center;
+  }
+}
