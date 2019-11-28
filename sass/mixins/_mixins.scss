@@ -1,0 +1,13 @@
+@mixin animate( $attr, $time ) {
+  -webkit-transition: $attr $time ease;
+  -moz-transition: $attr $time ease;
+  -o-transition: $attr $time ease;
+  transition: $attr $time ease;
+}
+
+@mixin boxShadow( $red, $green, $blue, $alpha ) {
+  -webkit-box-shadow: 0 3px 5px rgba( $red, $green, $blue, $alpha );
+  -moz-box-shadow: 0 3px 5px rgba( $red, $green, $blue, $alpha );
+  -o-box-shadow: 0 3px 5px rgba( $red, $green, $blue, $alpha );
+  box-shadow: 0 3px 5px rgba( $red, $green, $blue, $alpha );
+}
