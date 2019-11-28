@@ -2,45 +2,45 @@
 const { src, dest, task, watch, series, parallel } = require( 'gulp' );
 
 // CSS related plugins
-var autoprefixer    = require( 'gulp-autoprefixer' );
-var sass            = require( 'gulp-sass' );
+let autoprefixer    = require( 'gulp-autoprefixer' );
+let sass            = require( 'gulp-sass' );
 
 // JS related plugins
-var babelify        = require( 'babelify' );
-var browserify      = require( 'browserify' );
-var buffer          = require( 'vinyl-buffer' );
-var source          = require( 'vinyl-source-stream' );
-var uglify          = require( 'gulp-uglify' );
+let babelify        = require( 'babelify' );
+let browserify      = require( 'browserify' );
+let buffer          = require( 'vinyl-buffer' );
+let source          = require( 'vinyl-source-stream' );
+let uglify          = require( 'gulp-uglify' );
 
 // Utility Plugins
-var rename          = require( 'gulp-rename' );
-var sourcemaps      = require( 'gulp-sourcemaps' );
-var notify          = require( 'gulp-notify' );
+let rename          = require( 'gulp-rename' );
+let sourcemaps      = require( 'gulp-sourcemaps' );
+let notify          = require( 'gulp-notify' );
 
 // Browser related plugins
-var browserSync     = require( 'browser-sync' );
+let browserSync     = require( 'browser-sync' );
 
 // Project related variables
-var styleSRC        = './sass/';
-var styleURL        = './css/';
-var styleFiles      = [ 'ppt.admin.scss', 'ppt.scss' ];
-var mapURL          = './';
+let styleSRC        = './sass/';
+let styleURL        = './css/';
+let styleFiles      = [ 'ppt.admin.scss', 'ppt.scss' ];
+let mapURL          = './';
 
-var jsSRC           = './scripts/';
-var jsFiles         = [ 'ppt.admin.js', 'ppt.js', 'app.js' ];
-var jsURL           = './js/';
+let jsSRC           = './scripts/';
+let jsFiles         = [ 'ppt.admin.js', 'ppt.js', 'app.js' ];
+let jsURL           = './js/';
 
-var imageWatch      = './img/**/*.img';
-var styleWatch      = './sass/**/*.scss';
-var jsWatch         = './js/**/*.js';
+let imageWatch      = './img/**/*.img';
+let styleWatch      = './sass/**/*.scss';
+let jsWatch         = './scripts/**/*.js';
 
-var phpWatch        = ['./*.php', './**/*.php'];
+let phpWatch        = ['./*.php', './**/*.php'];
 
 // Task functions
 function browser_sync() {
     browserSync.init({
         open: false,
-        injectChanges: false,
+        injectChanges: true,
         proxy: 'http://ppt.test/'
     });
 }
@@ -87,8 +87,7 @@ function js(done) {
             .pipe( sourcemaps.init({ loadMaps: true }) )
             .pipe( uglify() )
             .pipe( sourcemaps.write( '.' ) )
-            .pipe( dest( jsURL ) )
-            .pipe( browserSync.stream() );
+            .pipe( dest( jsURL ) );
     });
     done();
 }
