@@ -10,9 +10,10 @@ final class Init {
 	 * @return array Full list of theme classes
 	 */
 	public static function get_services() {
-
 		return [
-			Setup\Enqueue::class
+			Setup\Enqueue::class,
+			Setup\Menus::class,
+			Setup\Setup::class,
 		];
 	}
 
