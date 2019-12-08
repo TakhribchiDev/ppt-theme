@@ -1,12 +1,21 @@
-jQuery( document ).ready( function ($) {
-    $( window ).scroll( 'scroll', function () {
-        let header = $( document ).find( '.header-container' );
-        let scrollTop = $( window ).scrollTop();
-
-        if ( scrollTop > 0 ) {
-            header.addClass( 'header-fixed' );
-        } else {
-            header.removeClass( 'header-fixed' );
-        }
+jQuery( document ).ready( function ( $ ) {
+    maybeFixedHeader();
+    $( window ).on( 'scroll', function() {
+        maybeFixedHeader();
     } );
+} );
+
+function maybeFixedHeader() {
+    let header = $( document ).find( '.header-container' );
+    let offsetTop = header.offset().top;
+
+    if ( offsetTop > 0 ) {
+        header.addClass( 'header-fixed' );
+    } else {
+        header.removeClass( 'header-fixed' );
+    }
+}
+
+$( '.ppt-product-preview-slider' ).on( 'slide.bs.carousel', function() {
+    $( '.tiny-timer' ).addClass( 'countdown' );
 } );
