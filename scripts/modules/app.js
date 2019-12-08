@@ -7,7 +7,7 @@ class App {
     }
 
     init() {
-        console.info( 'App nitialized!' );
+        console.info( 'App initialized!' );
     }
 
 }
