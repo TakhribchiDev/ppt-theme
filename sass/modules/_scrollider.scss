@@ -1,0 +1,95 @@
+/*
+* ----------------------------------------
+*   Scrollider
+* ----------------------------------------
+*/
+.ppt-scrollider {
+  position: relative;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+
+  .scrollide {
+    position: absolute;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 24px;
+    opacity: 0.6;
+    z-index: 1;
+    @include animate( opacity, 320ms );
+
+    i {
+      position: relative;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      opacity: 0.3;
+      background-color: $pure-black;
+      @include boxShadow( 0, 3px, 5px, 0.2 );
+      @include animate( opacity, 320ms );
+    }
+
+    &:hover {
+      opacity: 1;
+      color: $magenta;
+
+      &:before {
+        opacity: 1;
+        background-color: $white;
+      }
+    }
+
+    &.hidden {
+      opacity: 0;
+
+      &:before {
+        opacity: 0;
+      }
+    }
+
+    &.scrollide-left {
+      left: 0;
+
+      i {
+        padding-right: 5px;
+      }
+    }
+
+    &.scrollide-right {
+      right: 0;
+
+      i {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .scrollide-box {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-width: 100%;
+    padding: 10px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    @extend %hide-scrollbar;
+  }
+
+  .scrollide-item {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 25%;
+    -ms-flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
