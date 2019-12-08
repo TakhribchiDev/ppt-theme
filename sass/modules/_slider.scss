@@ -1,0 +1,97 @@
+/*
+* ----------------------------------------
+*   Slider
+* ----------------------------------------
+*/
+.ppt-slider {
+  margin: 40px 0;
+
+  .carousel-inner {
+    border-radius: 40px;
+    @include boxShadow( 0, 3px, 5px, 0.4 );
+  }
+
+  .carousel-indicators {
+    flex-direction: row-reverse;
+
+    li {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: none;
+      margin: 20px 5px;
+      @include animate( width, 200ms );
+
+      &.active {
+        width: 24px;
+      }
+    }
+  }
+
+  .carousel-item {
+    .carousel-slide {
+      position: relative;
+      height: 450px;
+
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.7;
+        @include magentaGradient( -45 );
+      }
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 100px;
+      right: 80px;
+      font-weight: 900;
+      color: $white;
+      text-shadow: 0 3px 5px rgba( 0, 0, 0, 0.4 );
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    opacity: 0.3;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      opacity: 0;
+      background-color: $pure-black;
+    }
+
+    &:hover {
+      opacity: 0.6;
+
+      &:before {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .carousel-control-prev {
+    i {
+      padding-right: 5px;
+    }
+  }
+
+  .carousel-control-next {
+    i {
+      padding-left: 5px;
+    }
+  }
+}
