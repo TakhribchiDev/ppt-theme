@@ -4,13 +4,20 @@
 * ----------------------------------------
 */
 .header-container {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
   padding: 40px 30px 40px 30px;
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
   align-items: center;
-  z-index: 0;
+
+  * {
+    z-index: 1031;
+  }
 
   &:before {
     content: '';
@@ -25,10 +32,6 @@
     @include animate( opacity, 200ms );
   }
 
-  * {
-    z-index: 1;
-  }
-
   .ppt-logo {
     svg {
       fill: $magenta;
@@ -38,6 +41,7 @@
     line-height: inherit;
     white-space: nowrap;
   }
+
   .ppt-navbar {
     flex-direction: row;
     -ms-flex-direction: row;
@@ -59,7 +63,7 @@
 
           &:hover,
           &:focus {
-            @include boxShadow( 0, 0, 0, 0.2 );
+            @include boxShadow( 0, 3px, 5px, 0.2 );
             color: $white;
             background-color: $magenta;
           }
@@ -67,7 +71,7 @@
         &.active {
           a {
             background-color: $magenta;
-            @include boxShadow( 0, 0, 0, 0.2 );
+            @include boxShadow( 0, 3px, 5px, 0.2 );
             color: $white;
           }
         }
@@ -139,7 +143,7 @@
       background-color: $green;
       border-radius: 30px;
       font-size: 16px;
-      @include boxShadow( 0, 0, 0, 0.1 );
+      @include boxShadow( 0, 3px, 5px, 0.1 );
       @include animate( background-color, 320ms );
 
       i {
@@ -156,18 +160,8 @@
 }
 
 .header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
-
-  * {
-    z-index: 1031;
-  }
-
   &:before {
-    @include boxShadow( 0, 0, 0, 0.3 );
+    @include boxShadow( 0, 3px, 5px, 0.3 );
     opacity: 1;
   }
 
