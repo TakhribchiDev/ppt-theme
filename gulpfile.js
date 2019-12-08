@@ -27,7 +27,7 @@ let styleFiles      = [ 'ppt.admin.scss', 'ppt.scss' ];
 let mapURL          = './';
 
 let jsSRC           = './scripts/';
-let jsFiles         = [ 'ppt.admin.js', 'ppt.js', 'app.js' ];
+let jsFiles         = [ 'ppt.admin.js', 'ppt.js', 'main.js' ];
 let jsURL           = './js/';
 
 let imageWatch      = './img/**/*.img';
@@ -101,7 +101,7 @@ function watch_files() {
         watch( url, reload);
     } );
 
-    src( './notify.txt' )
+    src( jsURL + 'main.min.js' )
         .pipe( notify({ message: 'Gulp is Watching, Happy Coding!' }) );
 }
 
