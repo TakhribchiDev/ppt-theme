@@ -1,0 +1,116 @@
+.ppt-special-offers {
+  margin: 40px 0;
+
+  .carousel-inner {
+    padding: 0;
+  }
+
+  .carousel-title {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 16;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border-radius: 40px;
+    @include purpleGradient();
+    @include boxShadow( 0, 3px, 5px, 0.3 );
+
+    i {
+      color: $yellow;
+      font-size: 40px;
+      background-color: rgba( 0, 0, 0, 0.2 );
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .text {
+      margin: 0 30px;
+      font-size: 30px;
+      font-weight: 900;
+      color: $white;
+    }
+  }
+
+  .carousel-indicators {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: unset;
+    padding: 0 20px 0;
+
+    li {
+      display: flex;
+      display: -ms-flexbox;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-indent: unset;
+      width: 100%;
+      height: 64px;
+      background: none;
+      border: none;
+      opacity: unset;
+      margin: unset;
+
+      .title {
+        position: relative;
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 35px;
+        opacity: 0;
+        @include animate( opacity, 320ms );
+      }
+
+      &.active {
+        width: 100%;
+        color: $white;
+
+        &:before {
+          @include purpleGradient();
+          opacity: 1;
+        }
+      }
+
+      &:not(.active):hover {
+        &:before {
+          background: none;
+          border: 2px solid $magenta;
+          border-radius: 35px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .carousel-item {
+    .carousel-slide {
+      &:before {
+        opacity: 0.4;
+        @include animate( opacity, 320ms );
+      }
+
+      &:hover {
+        &:before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
