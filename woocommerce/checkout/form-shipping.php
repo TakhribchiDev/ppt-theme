@@ -16,6 +16,8 @@
  * @global WC_Checkout $checkout
  */
 
+use Inc\Woocommerce\Checkout;
+
 defined( 'ABSPATH' ) || exit;
 ?>
 <div class="woocommerce-shipping-fields">
@@ -60,7 +62,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="woocommerce-additional-fields__field-wrapper">
 			<?php foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
-				<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+				<?php Checkout::form_field( $key, $field, $checkout->get_value( $key ) ); ?>
 			<?php endforeach; ?>
 		</div>
 

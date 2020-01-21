@@ -14,6 +14,11 @@ final class Init {
 			Setup\Enqueue::class,
 			Setup\Menus::class,
 			Setup\Setup::class,
+            Setup\Sidebars::class,
+            Woocommerce\SingleProduct::class,
+            Woocommerce\MyAccount::class,
+            Woocommerce\Cart::class,
+            Woocommerce\Checkout::class,
 		];
 	}
 

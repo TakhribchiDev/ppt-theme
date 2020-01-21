@@ -17,7 +17,7 @@ get_header();
                     <div class="row">
                         <div class="col-md-3">
 
-                        </div>
+                        </div><!-- .col-md-3 -->
                         <div class="col-md-9">
                             <?php
                             $query = new WP_Query([
@@ -28,7 +28,7 @@ get_header();
                                 while ( $query->have_posts() ): $query->the_post();
                                     ?>
                                         <?php
-                                        get_template_part( 'views/content/content-blog', get_post_type() );
+                                        get_template_part( 'views/content/content', 'blog' );
                                         ?>
                                 <?php
                                 endwhile;

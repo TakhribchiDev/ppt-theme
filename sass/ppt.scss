@@ -5,6 +5,7 @@
 */
 @import 'partials/iconfont';
 @import 'partials/fonts';
+@import 'partials/wordpress';
 @import 'variables/colors';
 @import 'mixins/gradients';
 @import 'mixins/mixins';
@@ -21,8 +22,39 @@
 @import 'modules/iconbox';
 @import 'modules/slider-offers';
 @import 'modules/scrollider';
-@import 'modules/product';
-@import 'modules/post';
+@import 'modules/form';
+@import 'modules/tabs';
+@import 'modules/alert';
+@import 'modules/steps';
+@import 'modules/table';
+@import 'modules/button';
+@import 'modules/pagination';
+@import 'modules/sdotus';
+
+/*
+* ----------------------------------------
+*   Templates imports
+* ----------------------------------------
+*/
+@import 'templates/product';
+@import 'templates/post';
+@import 'templates/single';
+@import 'templates/post-single';
+@import 'templates/single-product';
+@import 'templates/comments';
+@import 'templates/my-account';
+@import 'templates/checkout';
+@import 'templates/cart';
+
+/*
+* ----------------------------------------
+*   Pages imports
+* ----------------------------------------
+*/
+@import 'pages/home';
+@import 'pages/blog';
+@import 'pages/store';
+@import 'pages/tools';
 
 /*
 * ----------------------------------------
@@ -37,6 +69,11 @@ body {
   font-size: 20px;
   background-color: $background;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
 a {
   color: $black;
   @include animate( color, 320ms );
@@ -61,6 +98,7 @@ h2 {
 
 .ppt-content-area {
   padding-top: 120px;
+  margin-bottom: 40px;
 }
 
 .hr-separator {
@@ -71,130 +109,17 @@ h2 {
   margin-bottom: 40px;
 }
 
-/*
-* ----------------------------------------
-*   Homepage
-* ----------------------------------------
-*/
-.ppt-homepage-slider {
-  margin: 10px 0 40px;
-
-  .carousel-item .carousel-slide {
-    height: 620px;
-  }
+.ppt-container {
+  border-radius: 1.5em !important;
+  background-color: $white !important;
+  @include boxShadow( 0, 3px, 5px, 0.2 )
 }
 
-.ppt-popular-products {
-  margin: 40px 0;
-}
-
-.ppt-popular-tools {
-  margin: 40px 0;
-}
-
-.ppt-last-posts {
-  margin: 40px 0;
-
-  .ppt-scrollider {
-    .scrollide-item {
-      -ms-flex: 0 0 33.333333%;
-      flex: 0 0 33.333333%;
-      max-width: 33.333333%;
-    }
-  }
-}
-/*
-* ----------------------------------------
-*   Blog
-* ----------------------------------------
-*/
-.ppt-blog-posts {
-  .ppt-post {
-    flex-direction: row;
-    margin-bottom: 40px;
-
-    .entry-header {
-      height: 370px;
-      border-radius: 0 30px 30px 0;
-      opacity: 1;
-
-      &:before {
-        opacity: 1;
-      }
-
-      .entry-meta {
-        position: absolute;
-        display: flex;
-        display: -ms-flexbox;
-        flex-direction: row;
-        right: 40px;
-        bottom: 30px;
-
-        .meta-publish, .meta-author {
-          opacity: 1;
-          position: unset;
-        }
-
-        .meta-publish {
-          margin-left: 10px;
-        }
-      }
-
-      .entry-title {
-        position: absolute;
-        right: 40px;
-        bottom: 60px;
-        left: 40px;
-        font-size: 30px;
-        text-shadow: 0 3px 5px rgba( 0, 0, 0, 0.3 );
-
-        a {
-          color: $white;
-
-          &:hover {
-            color: $violet;
-          }
-        }
-      }
-    }
-
-    .entry-content {
-      display: flex;
-      display: -ms-flexbox;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 30px;
-      height: unset;
-    }
-
-    .entry-excerpt {
-      font-size: 18px;
-    }
-
-    .entry-footer {
-      padding: unset;
-    }
-  }
-}
-/*
-* ----------------------------------------
-*   Store
-* ----------------------------------------
-*/
-.ppt-products {
-  .row {
-    margin-bottom: 40px;
-  }
-}
-/*
-* ----------------------------------------
-*   Tools
-* ----------------------------------------
-*/
-.ppt-pricing-slider {
-  .carousel-item {
-    .carousel-slide {
-      height: 260px;
-    }
-  }
+.ppt-wrapper-center {
+  display: flex;
+  display: -ms-flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }

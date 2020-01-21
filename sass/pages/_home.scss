@@ -1,0 +1,42 @@
+/*
+* ----------------------------------------
+*   Home Page Classes
+* ----------------------------------------
+*/
+.ppt-homepage-slider {
+  margin: 10px 0 40px;
+
+  .carousel-item .carousel-slide {
+    height: 620px;
+  }
+}
+
+.ppt-popular-products {
+  margin: 40px 0;
+
+  .ppt-scrollider {
+    margin-top: 40px;
+  }
+}
+
+.ppt-popular-tools {
+  margin: 40px 0;
+
+  .ppt-scrollider {
+    margin-top: 40px;
+  }
+}
+
+.ppt-last-posts {
+  margin: 40px 0;
+
+  .ppt-scrollider {
+    margin-top: 40px;
+
+    .scrollide-item {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+}

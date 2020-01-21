@@ -1,0 +1,99 @@
+/*
+* ----------------------------------------
+*   Single
+* ----------------------------------------
+*/
+.ppt-tags-container {
+  i {
+    color: $magenta;
+  }
+
+  i, span {
+    margin-left: 10px;
+  }
+
+  .tags {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .tags-list a {
+    padding: 5px 15px;
+    color: $white;
+    border-radius: 20px;
+    background-color: $grey;
+    @include animate( background-color, 320ms );
+
+    &:hover {
+      background-color: $violet;
+    }
+  }
+}
+
+.ppt-single-post-pagination {
+  margin-top: 40px;
+  flex-direction: row-reverse;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  a {
+    position: relative;
+    display: flex;
+    display: -ms-flex;
+    justify-content: center;
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48%;
+    max-width: 48%;
+    align-items: center;
+    padding: 15px 0;
+    border-radius: 45px;
+    @include boxShadow( 0, 3px, 5px, 0.4 );
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: inherit;
+      @include animate( all, 320ms );
+    }
+
+    &:hover {
+      color: $black;
+
+      &:before {
+        @include borderGlow( 10px, $magenta );
+      }
+    }
+
+    .prev-post, .next-post {
+      display: flex;
+      display: -ms-flex;
+      align-items: center;
+
+      i {
+        position: absolute;
+        color: $magenta;
+      }
+    }
+
+    .prev-post {
+      i {
+        left: 20px;
+      }
+    }
+
+    .next-post {
+      i {
+        right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.ppt-form {
+  padding-top: 1.5em;
+
+  h1, h2, h3, h4 {
+    margin-bottom: 1.5em;
+  }
+
+  .row {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-control {
+    border-radius: 2rem;
+    height: unset;
+    padding: 0.75rem 1rem;
+    @include placeholderColor( 170, 170, 170, 1 );
+  }
+
+  .required {
+    color: $red;
+  }
+
+  fieldset {
+    legend {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    label, input {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .custom-control-label {
+    padding-right: 2.5rem;
+
+    &:before {
+      right: 1rem;
+    }
+
+    &:after {
+      right: 1rem;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &:before {
+      background-color: $magenta;
+      border-color: $magenta;
+    }
+  }
+
+  .ppt-form-submit {
+    position: relative;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-weight: 500;
+    color: $white;
+    @include purpleGradient();
+    @include animate( all, 320ms );
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      border-radius: inherit;
+      @include animate( background-color, 320ms );
+    }
+
+    &:hover {
+      &:before {
+        background-color: rgba( 0, 0, 0, 0.1 );
+      }
+    }
+  }
+
+  .ppt-login-submit, .ppt-register-submit {
+    position: relative;
+    padding: 10px 60px;
+    font-weight: 500;
+    color: $white;
+    border: none;
+    border-radius: 2rem;
+    @include boxShadow( 0, 3px, 5px, 0.2 );
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      border-radius: inherit;
+      @include animate( background-color, 320ms );
+    }
+
+    &:hover {
+      &:before {
+        background-color: rgba( 0, 0, 0, 0.1 );
+      }
+    }
+  }
+
+  .ppt-login-submit {
+    background-color: $green;
+  }
+
+  .ppt-register-submit {
+    background-color: $blue;
+  }
+}

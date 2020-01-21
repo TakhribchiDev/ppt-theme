@@ -1,8 +1,8 @@
 <?php
 /**
- * My Account page
+ * PPT Woocommerce My Account page
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/my-account.php.
+ * This template is overridden version of plugins/woocommerce/templates/myaccount/my-account.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -15,22 +15,35 @@
  * @version 3.5.0
  */
 
+use Inc\Woocommerce\MyAccount;
+
 defined( 'ABSPATH' ) || exit;
+?>
 
-/**
- * My Account navigation.
- *
- * @since 2.6.0
- */
-do_action( 'woocommerce_account_navigation' ); ?>
+<div id="pptProfileContainer" class="ppt-profile-container row">
 
-<div class="woocommerce-MyAccount-content">
-	<?php
-		/**
-		 * My Account content.
-		 *
-		 * @since 2.6.0
-		 */
-		do_action( 'woocommerce_account_content' );
-	?>
-</div>
+    <div class="col-md-3 ppt-profile-nav">
+    <?php
+    /**
+     * My Account navigation.
+     *
+     * @since 2.6.0
+     */
+    do_action( 'woocommerce_account_navigation' );
+    ?>
+    </div><!-- .col-md-3 -->
+
+    <div class="ppt-profile-content col-md-9">
+    <div class="woocommerce-MyAccount-content">
+        <?php
+        /**
+         * My Account content.
+         *
+         * @since 2.6.0
+         */
+        do_action( 'woocommerce_account_content' );
+        ?>
+    </div>
+    </div><!-- .col-md-9 -->
+
+</div><!-- .ppt-profile-container -->

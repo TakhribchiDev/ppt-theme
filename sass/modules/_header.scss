@@ -113,11 +113,18 @@
     display: flex;
     justify-content: space-between;
 
-    button {
+    a.cart-btn, a.profile-btn {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       border: none;
+
+      &.dropdown-toggle {
+        &::after {
+          display: none;
+        }
+      }
     }
 
     .cart-btn {
@@ -125,8 +132,8 @@
       height: 40px;
       border-radius: 25px;
       margin-left: 10px;
-      color: $magenta;
       font-size: 22px;
+      color: $magenta;
       background: transparent;
       @include animate( background-color, 320ms );
 
@@ -207,17 +214,7 @@
         box-shadow: 0 0 5px 3px rgba( 255, 255, 255, 0.1);
       }
 
-      &::placeholder {
-        color: rgba( 255, 255, 255, 0.7);
-      }
-
-      &::-ms-input-placeholder {
-        color: rgba( 255, 255, 255, 0.3);
-      }
-
-      &:-ms-input-placeholder {
-        color: rgba( 255, 255, 255, 0.3);
-      }
+      @include placeholderColor( 255, 255, 255, 0.5 );
     }
 
     .search-submit {
@@ -234,4 +231,9 @@
       color: $white;
     }
   }
+}
+
+.ppt-dropdown {
+  border-radius: 1.5em;
+  padding: 20px;
 }

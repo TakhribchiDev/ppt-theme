@@ -20,34 +20,42 @@ defined( 'ABSPATH' ) || exit;
 do_action( 'woocommerce_before_reset_password_form' );
 ?>
 
-<form method="post" class="woocommerce-ResetPassword lost_reset_password">
+    <div class="row">
+        <div class="col-md-6 ppt-auth-forms m-auto">
+            <div class="form-image-wrapper">
+                <img src="<?php echo img( 'key.png' ) ?>" alt="">
+            </div>
 
-	<p><?php echo apply_filters( 'woocommerce_reset_password_message', esc_html__( 'Enter a new password below.', 'woocommerce' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
+            <form method="post" class="ppt-form">
 
-	<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-		<label for="password_1"><?php esc_html_e( 'New password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" autocomplete="new-password" />
-	</p>
-	<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-		<label for="password_2"><?php esc_html_e( 'Re-enter new password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_2" id="password_2" autocomplete="new-password" />
-	</p>
+                <p><?php echo apply_filters( 'woocommerce_reset_password_message', esc_html__( 'Enter a new password below.', 'woocommerce' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
 
-	<input type="hidden" name="reset_key" value="<?php echo esc_attr( $args['key'] ); ?>" />
-	<input type="hidden" name="reset_login" value="<?php echo esc_attr( $args['login'] ); ?>" />
+                <div class="form-group">
+                    <label for="password_1" hidden="hidden"><?php esc_html_e( 'گذرواژه جدید', 'ppttheme' ); ?></label>
+                    <input type="password" class="form-control" name="password_1" id="password_1" autocomplete="new-password" placeholder="<?php esc_html_e( 'گذرواژه جدید', 'ppttheme' ); ?>" />
+                </div>
+                <p class="form-group">
+                    <label for="password_2" hidden="hidden"><?php esc_html_e( 'تکرار گذرواژه', 'ppttheme' ); ?></label>
+                    <input type="password" class="form-control" name="password_2" id="password_2" autocomplete="new-password" placeholder="<?php esc_html_e( 'تکرار گذرواژه', 'ppttheme' ); ?>"/>
+                </p>
 
-	<div class="clear"></div>
+                <input type="hidden" name="reset_key" value="<?php echo esc_attr( $args['key'] ); ?>" />
+                <input type="hidden" name="reset_login" value="<?php echo esc_attr( $args['login'] ); ?>" />
 
-	<?php do_action( 'woocommerce_resetpassword_form' ); ?>
+                <?php do_action( 'woocommerce_resetpassword_form' ); ?>
 
-	<p class="woocommerce-form-row form-row">
-		<input type="hidden" name="wc_reset_password" value="true" />
-		<button type="submit" class="woocommerce-Button button" value="<?php esc_attr_e( 'Save', 'woocommerce' ); ?>"><?php esc_html_e( 'Save', 'woocommerce' ); ?></button>
-	</p>
+                <div class="form-group row">
+                    <input type="hidden" name="wc_reset_password" value="true" />
+                    <div class="col-md-5 m-auto">
+                        <button type="submit" class="ppt-form-submit" value="<?php esc_attr_e( 'تغییر گذرواژه', 'ppttheme' ); ?>"><?php esc_html_e( 'تغییر گذرواژه', 'ppttheme' ); ?></button>
+                    </div><!-- col-md-5 -->
+                </div>
 
-	<?php wp_nonce_field( 'reset_password', 'woocommerce-reset-password-nonce' ); ?>
+                <?php wp_nonce_field( 'reset_password', 'woocommerce-reset-password-nonce' ); ?>
 
-</form>
+            </form>
+        </div><!-- .col-md-6 -->
+    </div><!-- .row -->
 <?php
 do_action( 'woocommerce_after_reset_password_form' );
 

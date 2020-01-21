@@ -16,20 +16,24 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
 
 if ( ! $messages ) {
-	return;
+    return;
 }
 
 ?>
-<ul class="woocommerce-error" role="alert">
-	<?php foreach ( $messages as $message ) : ?>
-		<li>
-			<?php
-				echo wc_kses_notice( $message );
-			?>
-		</li>
-	<?php endforeach; ?>
-</ul>
+
+<?php foreach ( $messages as $message ) : ?>
+    <div class="alert alert-danger" role="alert">
+        <?php
+        echo wc_kses_notice( $message );
+        ?>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+<?php endforeach; ?>

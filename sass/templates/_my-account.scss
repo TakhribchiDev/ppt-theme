@@ -1,0 +1,237 @@
+#pptProfileContainer, .ppt-profile-container {
+  border-radius: 30px;
+  background-color: $white;
+  @include boxShadow( 0, 3px, 5px, 0.2 );
+
+  .woocommerce-MyAccount-navigation, .woocommerce-MyAccount-content {
+    width: unset;
+    float: unset;
+  }
+
+  .ppt-profile-nav {
+    background-color: $magenta;
+    border-radius: inherit;
+    padding: unset;
+
+    .ppt-user-info {
+      display: flex;
+      display: -ms-flexbox;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 70px;
+      margin-bottom: 70px;
+
+      .avatar {
+        border: 6px solid $purple;
+        border-radius: 50%;
+      }
+
+      .user-nickname, .user-name, .user-email {
+        color: $white;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+
+      .user-nickname {
+        margin-top: 1rem;
+        font-size: 1.5em;
+      }
+
+      .user-name, .user-email {
+        font-size: 0.75em;
+        color: $light-grey;
+      }
+
+      .user-name {
+        margin-bottom: 0.5em;
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      display: -ms-flexbox;
+      flex-direction: column;
+      background-color: rgba( 255, 255, 255, 0.1 );
+      padding-top: 20px;
+      padding-bottom: 40px;
+      margin-bottom: unset;
+
+      li {
+        position: relative;
+        border-radius: 0 50px 50px 0;
+        padding-top: 15px;
+        padding-right: 20px;
+        padding-bottom: 15px;
+        margin-top: 15px;
+        margin-right: -20px;
+        color: $white;
+        @include animate( background-color, 320ms );
+
+        &:before, &:after {
+          position: absolute;
+          left: 0;
+          height: 30px;
+          width: 30px;
+          opacity: 0;
+          @include animate( opacity, 320ms );
+        }
+
+        &:before {
+          content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path fill="%23fff" d="M0,0V30H30A30,30,0,0,1,0,0Z" transform="translate(0 0)"/></svg>');
+          top: -30px;
+        }
+
+        &:after {
+          content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path fill="%23fff" d="M0,30V0H30A30,30,0,0,0,0,30Z" transform="translate(0 0)"/></svg>');
+          bottom: -30px;
+        }
+
+        &:hover, &:focus {
+          background-color: rgba( 255, 255, 255, 0.1 );
+
+          &:before, &:after {
+            opacity: 0.1;
+          }
+        }
+
+        &.is-active {
+          color: $magenta;
+          background-color: $white;
+          opacity: 1;
+
+          &:before, &:after {
+            opacity: 1;
+          }
+
+          a {
+            opacity: 1;
+          }
+        }
+
+        i {
+          margin-left: 10px;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .ppt-profile-content {
+    padding: 40px;
+
+    .profile-title {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    form.woocommerce-EditAccountForm {
+      .row {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-control {
+        border-radius: 3rem;
+        height: unset;
+        padding: 0.75rem 1rem;
+        @include placeholderColor( 170, 170, 170, 1 );
+      }
+
+      .required {
+        color: $red;
+      }
+
+      fieldset {
+        legend {
+          font-size: 30px;
+          font-weight: bold;
+        }
+
+        label, input {
+          margin-top: 1.5rem;
+        }
+      }
+
+      .ppt-form-submit {
+        position: relative;
+        text-align: center;
+        border: none;
+        border-radius: 30px;
+        padding: 15px 30px;
+        margin-top: 20px;
+        font-weight: 500;
+        color: $white;
+        @include purpleGradient();
+        @include animate( all, 320ms );
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          border-radius: inherit;
+          @include animate( background-color, 320ms );
+        }
+
+        &:hover {
+          &:before {
+            background-color: rgba( 0, 0, 0, 0.1 );
+          }
+        }
+      }
+    }
+  }
+}
+
+// Login and register forms
+.ppt-auth-forms {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  .login-tabs {
+    justify-content: center;
+
+    .login-tab, .register-tab {
+      display: flex;
+      display: -ms-flexbox;
+      justify-content: center;
+      margin: unset;
+      padding-right: unset;
+      padding-left: unset;
+      width: 140px;
+    }
+
+    .login-tab {
+       border-radius: 0 2rem 2rem 0;
+     }
+
+    .register-tab {
+      border-radius: 2rem 0 0 2rem;
+    }
+  }
+
+  .form-image-wrapper {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    img {
+      height: 180px;
+      width: auto;
+    }
+  }
+}
+
+#authSlider {
+  .carousel-slide {
+    height: 700px;
+  }
+}

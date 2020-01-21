@@ -47,9 +47,9 @@ use Inc\Template\Product;
             </svg>
         </div>
 
-        <?php
-        echo Product::featuredType();
-        ?>
+<!--        --><?php
+//        Product::featuredType();
+//        ?>
 
     </div><!-- .ppt-product-preview-slider -->
 

@@ -1,0 +1,82 @@
+/*
+* ----------------------------------------
+*   Blog Page Classes
+* ----------------------------------------
+*/
+.ppt-blog-posts {
+  .hr-separator {
+    margin-bottom: 40px;
+  }
+
+  .ppt-post {
+    flex-direction: row;
+    margin-bottom: 40px;
+
+    .entry-header {
+      height: 370px;
+      border-radius: 0 30px 30px 0;
+
+      &:hover, &:focus {
+        &:before{
+          opacity: 0.1
+        }
+      }
+
+      &:before {
+        opacity: 0.6;
+      }
+
+      .entry-meta {
+        position: absolute;
+        display: flex;
+        display: -ms-flexbox;
+        flex-direction: row;
+        right: 40px;
+        bottom: 30px;
+
+        .meta-publish, .meta-author {
+          opacity: 1;
+          position: unset;
+        }
+
+        .meta-publish {
+          margin-left: 10px;
+        }
+      }
+
+      .entry-title {
+        position: absolute;
+        right: 40px;
+        bottom: 60px;
+        left: 40px;
+        font-size: 30px;
+        text-shadow: 0 3px 5px rgba( 0, 0, 0, 0.3 );
+
+        a {
+          color: $white;
+
+          &:hover {
+            color: $violet;
+          }
+        }
+      }
+    }
+
+    .entry-content {
+      display: flex;
+      display: -ms-flexbox;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      height: unset;
+    }
+
+    .entry-excerpt {
+      font-size: 18px;
+    }
+
+    .entry-footer {
+      padding: unset;
+    }
+  }
+}

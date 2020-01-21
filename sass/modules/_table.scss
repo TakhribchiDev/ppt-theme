@@ -1,0 +1,52 @@
+/*
+* ----------------------------------------
+*   Table
+* ----------------------------------------
+*/
+.ppt-table {
+  display: table;
+  padding: 20px;
+  text-align: right;
+  width: 100%;
+  border-radius: 1.5em;
+  background-color: $light-grey;
+  @include boxShadow( 0, 3px, 5px, 0.2 );
+
+  thead {
+    color: $magenta;
+  }
+
+  tbody {
+    counter-reset: rowNum;
+
+    tr {
+      td.number {
+        &:before {
+          content: counter( rowNum );
+          counter-increment: rowNum;
+        }
+      }
+
+      &:nth-child( 2n + 1 ) {
+        background-color: $extra-light-grey;
+      }
+
+      &:nth-child( 2n ) {
+        background-color: $light-grey;
+      }
+    }
+  }
+
+  th {
+    font-weight: bold;
+    padding: 1em 1.5em;
+    line-height: 1.5em;
+    vertical-align: middle;
+  }
+
+  td {
+    padding: 1em 1.5em;
+    vertical-align: middle;
+    line-height: 1.5em;
+  }
+}

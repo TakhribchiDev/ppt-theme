@@ -4,10 +4,12 @@ class Scrollider {
     }
 
     init() {
-        let scrolliders = $( document ).find( '.ppt-scrollider' );
-        let that = this; // Just because this does'nt work in jQuery "each" method
-        $.each( scrolliders, function( index, scrollider ) {
-            that.scrolliderSetup( scrollider.id );
+        let that = this; // Just because this does'nt work in jQuery methods
+        $( '.ppt-scrollider' ).ready( function() {
+            let scrolliders = $( '.ppt-scrollider' );
+            $.each(scrolliders, function (index, scrollider) {
+                that.scrolliderSetup(scrollider.id);
+            });
         } );
     }
 
@@ -35,6 +37,9 @@ class Scrollider {
         let scrollPos = this.getScrollPos( scrollideBox );
         let hiddenContentWidth = this.getHiddenWidth( scrollider );
 
+        console.log( scrollPos );
+        console.log( hiddenContentWidth );
+
         if ( scrollPos <= scrollideMargin ) {
             leftScrollide.removeClass( 'hidden' );
             rightScrollide.addClass( 'hidden' );
@@ -47,7 +52,7 @@ class Scrollider {
         }
     }
 
-     scrollideOnClick( scrollider ) {
+    scrollideOnClick( scrollider ) {
         let leftScrollide = scrollider.find( '.scrollide-left' );
         let rightScrollide = scrollider.find( '.scrollide-right' );
 

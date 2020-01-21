@@ -3,16 +3,37 @@
 *   Mixins
 * ----------------------------------------
 */
-@mixin animate( $attr, $time ) {
-  -webkit-transition: $attr $time ease;
-  -moz-transition: $attr $time ease;
-  -o-transition: $attr $time ease;
-  transition: $attr $time ease;
+@mixin animate( $attr, $time, $important: false ) {
+  -webkit-transition: $attr $time ease if( $important, !important, null );
+  -moz-transition: $attr $time ease if( $important, !important, null );
+  -o-transition: $attr $time ease if( $important, !important, null );
+  transition: $attr $time ease if( $important, !important, null );
 }
 
-@mixin boxShadow( $x, $y, $size, $alpha ) {
-  -webkit-box-shadow: $x $y $size rgba( 0, 0, 0, $alpha );
-  -moz-box-shadow: $x $y $size rgba( 0, 0, 0, $alpha );
-  -o-box-shadow: $x $y $size rgba( 0, 0, 0, $alpha );
-  box-shadow: $x $y $size rgba( 0, 0, 0, $alpha );
+@mixin boxShadow( $x, $y, $size, $alpha, $important: false ) {
+  -webkit-box-shadow: $x $y $size rgba( 0, 0, 0, $alpha ) if( $important, !important, null );
+  -moz-box-shadow: $x $y $size rgba( 0, 0, 0, $alpha ) if( $important, !important, null );
+  -o-box-shadow: $x $y $size rgba( 0, 0, 0, $alpha ) if( $important, !important, null );
+  box-shadow: $x $y $size rgba( 0, 0, 0, $alpha ) if( $important, !important, null );
+}
+
+@mixin borderGlow( $size, $colorHex, $important: false ) {
+  -webkit-box-shadow: 0 0 $size $colorHex if( $important, !important, null );
+  -moz-box-shadow: 0 0 $size $colorHex if( $important, !important, null );
+  -o-box-shadow: 0 0 $size $colorHex if( $important, !important, null );
+  box-shadow: 0 0 $size $colorHex if( $important, !important, null );
+}
+
+@mixin placeholderColor ( $red, $green, $blue, $alpha: 1 ) {
+  &::placeholder {
+    color: rgba( $red, $green, $blue, $alpha);
+  }
+
+  &::-ms-input-placeholder {
+    color: rgba( $red, $green, $blue, $alpha);
+  }
+
+  &:-ms-input-placeholder {
+    color: rgba( $red, $green, $blue, $alpha);
+  }
 }

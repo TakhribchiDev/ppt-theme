@@ -16,104 +16,190 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 
 do_action( 'woocommerce_before_customer_login_form' ); ?>
 
-<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+<div class="row">
+    <div id="customer_login" class="col-md-6 ppt-auth-forms">
 
-<div class="u-columns col2-set" id="customer_login">
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
-	<div class="u-column1 col-1">
+        <div class="ppt-tabs login-tabs">
+            <a class="ppt-tab login-tab active" data-tab="#loginForm" role="button"><?php _e( 'ورود' ) ?></a>
+            <a class="ppt-tab register-tab" data-tab="#registerForm" role="button"><?php _e( 'عضویت' ) ?></a>
+        </div>
 
-<?php endif; ?>
+        <div id="loginForm" class="ppt-tab-content active">
 
-		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
+            <?php endif; ?>
 
-		<form class="woocommerce-form woocommerce-form-login login" method="post">
+            <div class="form-image-wrapper">
+                <img src="<?php echo img( 'lock.png' ) ?>" alt="">
+            </div>
 
-			<?php do_action( 'woocommerce_login_form_start' ); ?>
+            <form class="ppt-form" method="post">
 
-			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-			</p>
-			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
-			</p>
+                <?php do_action( 'woocommerce_login_form_start' ); ?>
 
-			<?php do_action( 'woocommerce_login_form' ); ?>
+                <div class="form-group">
+                    <label for="username" hidden="hidden"><?php esc_html_e( 'نام کاربری یا آدرس ایمیل', 'ppttheme' ); ?></label>
+                    <input type="text" class="form-control" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" placeholder="<?php esc_html_e('نام کاربری یا آدرس ایمیل', 'ppttheme'); ?>" /><?php // @codingStandardsIgnoreLine ?>
+                </div>
+                <div class="form-group">
+                    <label for="password" hidden="hidden"><?php esc_html_e( 'گذرواژه', 'ppttheme' ); ?></label>
+                    <input class="form-control" type="password" name="password" id="password" autocomplete="current-password" placeholder="<?php esc_html_e('گذرواژه', 'ppttheme'); ?>"/>
+                </div>
 
-			<p class="form-row">
-				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
-				</label>
-				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Log in', 'woocommerce' ); ?></button>
-			</p>
-			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
-			</p>
+                <?php do_action( 'woocommerce_login_form' ); ?>
 
-			<?php do_action( 'woocommerce_login_form_end' ); ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="custom-control custom-checkbox">
+                            <input id="rememberme" class="custom-control-input" name="rememberme" type="checkbox" value="forever" />
+                            <label for="rememberme" class="custom-control-label"><?php esc_html_e( 'مرا به خاطر بسپار', 'ppttheme' ); ?></label>
+                        </div><!-- .custom-control -->
+                    </div><!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="form-text lost-password">
+                            <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'رمز عبور را فراموش کرده اید؟', 'ppttheme' ); ?></a>
+                        </div>
+                    </div><!-- .col-md-6 -->
 
-		</form>
+                </div><!-- .row -->
 
-<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+                <div class="row">
 
-	</div>
+                    <div class="col-md-4 m-auto">
+                        <button type="submit" class="ppt-login-submit" name="login" value="<?php esc_attr_e( 'ورود', 'ppttheme' ); ?>"><?php esc_html_e( 'ورود', 'ppttheme' ); ?></button>
+                    </div><!-- .col-md-12 -->
 
-	<div class="u-column2 col-2">
+                </div><!-- .row -->
+                <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 
-		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
-		<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 
-			<?php do_action( 'woocommerce_register_form_start' ); ?>
+                <?php do_action( 'woocommerce_login_form_end' ); ?>
 
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
+            </form>
 
-				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-					<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-				</p>
+        </div><!-- #loginForm -->
 
-			<?php endif; ?>
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
-			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-			</p>
 
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+            <div id="registerForm"  class="ppt-tab-content">
 
-				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
-				</p>
+                <div class="form-image-wrapper">
+                    <img src="<?php echo img( 'sign-up.png' ) ?>" alt="">
+                </div>
 
-			<?php else : ?>
+                <form method="post" class="ppt-form" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 
-				<p><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></p>
+                    <?php do_action( 'woocommerce_register_form_start' ); ?>
 
-			<?php endif; ?>
+                    <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
-			<?php do_action( 'woocommerce_register_form' ); ?>
+                        <div class="form-group">
+                            <label for="reg_username" hidden="hidden"><?php esc_html_e( 'نام کاربری', 'ppttheme' ); ?></label>
+                            <input type="text" class="form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" placeholder="<?php esc_html_e( 'نام کاربری', 'ppttheme' ); ?>" /><?php // @codingStandardsIgnoreLine ?>
+                        </div>
 
-			<p class="woocommerce-FormRow form-row">
-				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
-			</p>
+                    <?php endif; ?>
 
-			<?php do_action( 'woocommerce_register_form_end' ); ?>
+                    <div class="form-group">
+                        <label for="reg_email" hidden="hidden"><?php esc_html_e( 'آدرس ایمیل', 'ppttheme' ); ?></label>
+                        <input type="email" class="form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" placeholder="<?php esc_html_e( 'آدرس ایمیل', 'ppttheme' ); ?>" /><?php // @codingStandardsIgnoreLine ?>
+                    </div>
 
-		</form>
+                    <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
-	</div>
+                        <div class="form-group">
+                            <label for="reg_password" hidden="hidden"><?php esc_html_e( 'گذرواژه', 'woocommerce' ); ?></label>
+                            <input type="password" class="form-control" name="password" id="reg_password" autocomplete="new-password" placeholder="<?php esc_html_e( 'گذرواژه', 'ppttheme' ); ?>" />
+                        </div>
 
-</div>
-<?php endif; ?>
+                    <?php else : ?>
+
+                        <p><?php esc_html_e( 'گذرواژه به آدرس ایمیل شما فرستاده خواهد شد.', 'ppttheme' ); ?></p>
+
+                    <?php endif; ?>
+
+                    <?php do_action( 'woocommerce_register_form' ); ?>
+
+                    <div class="form-group row">
+                        <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
+                        <div class="col-md-5 m-auto">
+                        <button type="submit" class="ppt-register-submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
+                        </div><!-- .col-md-5 -->
+                    </div>
+
+                    <?php do_action( 'woocommerce_register_form_end' ); ?>
+
+                </form>
+
+            </div><!-- #registerForm -->
+
+        <?php endif; ?>
+
+    </div><!-- .col-md-6 -->
+
+    <div class="col-md-6">
+
+        <?php
+        $slides = [
+            [
+                'image' => 'discuss'
+            ],
+            [
+                'image' => 'designing'
+            ],
+            [
+                'image' => 'design-desk'
+            ],
+            [
+                'image' => 'presentation'
+            ],
+            [
+                'image' => 'projector'
+            ],
+            [
+                'image' => 'screens'
+            ]
+        ];
+        ?>
+
+        <div id="authSlider" class="ppt-homepage-slider ppt-slider carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <?php for ( $j = 0; $j < sizeof( $slides ); $j++ ) : ?>
+                    <li data-target="#authSlider" data-slide-to="<?php echo $j ?>" class="<?php echo ( $j == 0 ? 'active' : '' ); ?>"></li>
+                <?php endfor; ?>
+            </ol>
+            <div class="carousel-inner">
+
+                <?php $i = 0; foreach ( $slides as $slide ) : ?>
+                    <div class="carousel-item <?php echo ( $i == 0 ? 'active' : '' ); ?>">
+                        <div class="d-block w-100 carousel-slide background-image" style="background-image: url('<?php echo get_template_directory_uri() . '/img/slider/' . $slide['image'] . '.jpg'; ?>')"></div>
+                    </div><!-- .carousel-item -->
+                    <?php $i++; endforeach; ?>
+
+            </div><!-- .carousel-inner -->
+
+            <a href="#authSlider" class="carousel-control-prev" role="button" data-slide="prev">
+                <i class="ppt-icon ppt-chevron-left-thin"></i>
+                <span class="sr-only">قبلی</span>
+            </a>
+
+            <a href="#authSlider" class="carousel-control-next" role="button" data-slide="next">
+                <i class="ppt-icon ppt-chevron-right-thin"></i>
+                <span class="sr-only">بعدی</span>
+            </a>
+
+        </div><!-- #authSlider -->
+
+    </div><!-- .col-md-6 -->
+
+</div><!-- .row -->
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>

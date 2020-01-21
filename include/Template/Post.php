@@ -22,12 +22,11 @@ final class Post
             endforeach;
         endif;
 
-        return '<i class="ppt-icon ppt-edit"></i><span class="posted-on"><a href="' . get_the_permalink() . '">' . $posted_on . '</a></span><span>' . esc_html( 'پیش در' ) . '</span></span><span class="posted-in">' . $posted_in . '</span>';
-
+        echo '<i class="ppt-icon ppt-edit"></i><span class="posted-on"><a href="' . get_the_permalink() . '">' . $posted_on . '</a></span><span>' . esc_html( 'پیش در' ) . '</span></span><span class="posted-in">' . $posted_in . '</span>';
     }
 
     public static function metaAuthor() {
-        return '<i class="ppt-icon ppt-ink-pen"></i><span class="author"><a href="' . get_the_author_link() . '">' . get_the_author() . '</a></span>';
+        echo '<i class="ppt-icon ppt-ink-pen"></i><span class="author"><a href="' . get_the_author_link() . '">' . get_the_author() . '</a></span>';
     }
 
     public static function footerComments() {
@@ -43,6 +42,6 @@ final class Post
             $comments = __( 'نظرات قفل شده' );
         }
 
-        return '<i class="ppt-icon ppt-comment"></i><a class="comments-link" href="' . get_comments_link() . '">' . $comments . '</a>';
+        echo '<i class="ppt-icon ppt-comment"></i><a class="comments-link" href="' . get_comments_link() . '">' . $comments . '</a>';
     }
 }

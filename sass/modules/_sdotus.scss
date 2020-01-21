@@ -1,0 +1,88 @@
+/*
+* ----------------------------------------
+*   Sdotus - status dot
+* ----------------------------------------
+*/
+$sdotus-size: 8px;
+
+.ppt-sdotus {
+  &:not( .active ) {
+    display: none;
+  }
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $sdotus-size;
+  height: $sdotus-size;
+
+  &::before {
+    content: '';
+    position: relative;
+    display: block;
+    width: 300%;
+    height: 300%;
+    box-sizing: border-box;
+    margin-right: -100%;
+    margin-top: -100%;
+    border-radius: 50%;
+    animation: pulse-ring 2s cubic-bezier( 0.215, 0.61, 0.355, 1 ) infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 1px rgba( 0, 0, 0, .3 );
+    animation: pulse-dot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+  }
+
+  &.sdotus-green {
+    &::before {
+      background-color: $light-green;
+    }
+
+    &::after {
+      background-color: $green;
+    }
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale( 0.33 );
+  }
+
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale( 0.33 );
+  }
+
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale( 0.8 );
+  }
+
+  50% {
+    transform: scale( 1 );
+  }
+
+  100% {
+    transform: scale( 0.8 );
+  }
+}

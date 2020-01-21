@@ -1,0 +1,53 @@
+.ppt-btn {
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+.ppt-btn-primary {
+  position: relative;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-weight: 500;
+  color: $white;
+  @include purpleGradient();
+  @include animate( all, 320ms );
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: inherit;
+    @include animate( background-color, 320ms );
+  }
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+
+    &:before {
+      background-color: rgba( 0, 0, 0, 0.1 );
+    }
+  }
+}
+
+.ppt-btn-secondary {
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: 2px solid $magenta;
+  color: $magenta;
+  background-color: $white;
+  @include animate( all, 320ms );
+
+  &:hover {
+    color: $white;
+    border-color: transparent;
+
+    @include purpleGradient();
+  }
+}

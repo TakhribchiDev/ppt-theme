@@ -23,7 +23,7 @@ if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_lo
 
 ?>
 <div class="woocommerce-form-login-toggle">
-	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', esc_html__( 'Returning customer?', 'woocommerce' ) ) . ' <a href="#" class="showlogin">' . esc_html__( 'Click here to login', 'woocommerce' ) . '</a>', 'notice' ); ?>
+	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', esc_html__( 'عضو هستید؟', 'ppttheme' )  . ' <a href="#" class="showlogin alert-link">' . esc_html__( 'برای ورود اینجا کلیک کنید', 'ppttheme' ) . '</a>' ) , 'notice' ); ?>
 </div>
 <?php
 

@@ -1,0 +1,46 @@
+.ppt-cart-table {
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  tbody {
+    tr:last-child {
+      background: none;
+    }
+  }
+
+  a.remove {
+    i {
+      font-size: 1rem;
+    }
+  }
+
+ .coupon-wrapper {
+   display: flex;
+   display: -ms-flexbox;
+   flex-direction: row;
+   justify-content: stretch;
+
+   input.coupon-input {
+     width: unset;
+     border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
+   }
+
+   .apply-coupon-btn {
+     border: 1px solid #ced4da;
+     border-right: none;
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+   }
+ }
+}
+
+.ppt-cart-totals-table {
+  background-color: $white;
+
+  tbody {
+    tr:nth-child(n) {
+      background: none;
+    }
+  }
+}

@@ -11,7 +11,6 @@ get_header();
         <main id="main" class="site-main" role="main">
             <div class="container">
 
-                <div class="ppt-single-post">
                             <?php
                             if ( have_posts() ):
                                 while ( have_posts() ): the_post();
@@ -21,9 +20,12 @@ get_header();
                                     ?>
                                 <?php
                                 endwhile;
+
+                                if ( comments_open() || get_comments_number() ) :
+                                    comments_template();
+                                endif;
                             endif;
                             ?>
-                </div><!-- .ppt-single-post-->
 
             </div><!-- .container -->
         </main><!-- .site-main -->

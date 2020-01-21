@@ -31,6 +31,6 @@ final class Product
             $output .= '</div><!-- .featured-icon -->';
         }
 
-        return $output;
+        echo $output;
     }
 }

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'ppt-iconfont';
-  src:  url('../fonts/ppt-iconfont.eot?ulhlkv');
-  src:  url('../fonts/ppt-iconfont.eot?ulhlkv#iefix') format('embedded-opentype'),
-  url('../fonts/ppt-iconfont.ttf?ulhlkv') format('truetype'),
-  url('../fonts/ppt-iconfont.woff?ulhlkv') format('woff'),
-  url('../fonts/ppt-iconfont.svg?ulhlkv#ppt-iconfont') format('svg');
+  src:  url('../fonts/ppt-iconfont.eot?8hywmx');
+  src:  url('../fonts/ppt-iconfont.eot?8hywmx#iefix') format('embedded-opentype'),
+  url('../fonts/ppt-iconfont.ttf?8hywmx') format('truetype'),
+  url('../fonts/ppt-iconfont.woff?8hywmx') format('woff'),
+  url('../fonts/ppt-iconfont.svg?8hywmx#ppt-iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -36,6 +36,9 @@
 }
 .ppt-cart-add:before {
   content: "\e900";
+}
+.ppt-category:before {
+  content: "\e925";
 }
 .ppt-check:before {
   content: "\e91a";

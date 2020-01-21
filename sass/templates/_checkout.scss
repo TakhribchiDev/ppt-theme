@@ -1,0 +1,32 @@
+.checkout-stepsbar {
+  .step {
+    &::before {
+      font-family: ppt-iconfont, sans-serif;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  .step-user-details {
+    &::before {
+      content: '\e91b';
+    }
+  }
+
+  .step-review-order {
+    &::before {
+      content: '\e91e';
+    }
+  }
+
+  .step-payment {
+    &::before {
+      font-size: 1.5rem;
+      content: '\e91c';
+    }
+  }
+}

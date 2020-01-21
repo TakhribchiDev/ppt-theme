@@ -35,5 +35,23 @@ if ( ! function_exists( 'svg' ) ) {
     }
 }
 
+if ( ! function_exists( 'img' ) ) {
+    /**
+     * Get desired image uri
+     *
+     * @param $name
+     * @return string image_uri
+     */
+    function img( $name ) {
+        $uri = get_template_directory_uri() . '/img/' . $name;
+
+        if ( getimagesize( $uri ) ) {
+            return $uri;
+        } else {
+            return '';
+        }
+    }
+}
+
 
 

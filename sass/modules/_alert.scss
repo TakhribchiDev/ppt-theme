@@ -1,0 +1,105 @@
+/*
+* ----------------------------------------
+*   Alerts
+* ----------------------------------------
+*/
+.alert {
+  border-radius: 1rem;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid;
+
+  .close {
+    color: inherit;
+    float: left;
+  }
+
+  .alert-btn {
+    padding: 0.5em 1em;
+    border: 2px solid;
+    border-radius: 2em;
+    font-weight: 500;
+    background-color: $white;
+    @include animate( all, 320ms );
+  }
+
+  &.alert-success {
+    color: $green;
+    background-color: $extra-light-green;
+    border-color: $green;
+
+    .alert-btn {
+      color: $green;
+      border-color: $green;
+
+      &:hover, &:focus {
+        color: $white;
+        background-color: $green;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &.alert-danger {
+    color: $red;
+    background-color: $extra-light-red;
+    border-color: $red;
+
+    .alert-btn {
+      color: $red;
+      border-color: $red;
+
+      &:hover, &:focus {
+        color: $white;
+        background-color: $red;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &.alert-warning {
+    color: $orange;
+    background-color: $extra-light-yellow;
+    border-color: $orange;
+
+    .alert-btn {
+      color: $orange;
+      border-color: $orange;
+
+      &:hover, &:focus {
+        color: $white;
+        background-color: $orange;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &.alert-info {
+    color: $blue;
+    background-color: $extra-light-blue;
+    border-color: $blue;
+
+    .alert-link {
+      color: $blue;
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+
+    .alert-btn {
+      color: $blue;
+      border-color: $blue;
+
+      &:hover, &:focus {
+        color: $white;
+        background-color: $blue;
+        border-color: transparent;
+      }
+    }
+  }
+}

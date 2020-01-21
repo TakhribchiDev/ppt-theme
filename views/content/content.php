@@ -16,24 +16,26 @@ use Inc\Template\Post;
     endif;
     ?>
     <div class="entry-header ppt-featured-image background-image" style="background-image: url('<?php  echo esc_url( $featured_image ); ?>');">
-            <div class="meta-publish">
-                <?php
-                echo Post::metaPosted();
-                ?>
-            </div><!-- .meta-publish -->
-            <div class="meta-author">
-                <?php
-                echo Post::metaAuthor();
-                ?>
-            </div>
+        <div class="meta-publish">
+            <?php
+            Post::metaPosted();
+            ?>
+        </div><!-- .meta-publish -->
+        <div class="meta-author">
+            <?php
+            Post::metaAuthor();
+            ?>
+        </div>
     </div><!-- .entry-header -->
 
     <div class="entry-content">
 
         <h1 class="entry-title">
-        <?php
-        echo wp_trim_words( get_the_title(), 10 );
-        ?>
+            <a href="<?php the_permalink(); ?>">
+            <?php
+            echo wp_trim_words( get_the_title(), 10 );
+            ?>
+            </a>
         </h1>
 
         <p class="entry-excerpt">
@@ -46,14 +48,14 @@ use Inc\Template\Post;
     <div class="entry-footer">
         <div class="comments">
             <?php
-            echo Post::footerComments();
+            Post::footerComments();
             ?>
         </div>
         <div class="continue-reading">
             <a href="<?php the_permalink(); ?>" role="button">
-            <?php
-            _e( 'ادامه مطلب' )
-            ?>
+                <?php
+                _e( 'ادامه مطلب' )
+                ?>
             </a>
         </div>
     </div><!-- .entry-footer -->
